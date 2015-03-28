@@ -1,0 +1,5 @@
+#Items
+tile.ne:testBlock.name=Test Block
+
+#Blocks
+item.ne:itemTest.name=Test Item
