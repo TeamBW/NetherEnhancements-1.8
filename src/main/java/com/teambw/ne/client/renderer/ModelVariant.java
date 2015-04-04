@@ -1,5 +1,8 @@
 package com.teambw.ne.client.renderer;
 
+import java.util.Collection;
+import java.util.Iterator;
+
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelBakery;
@@ -8,23 +11,24 @@ import net.minecraft.item.Item;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.teambw.ne.common.blocks.iface.IBlockVariant;
+import com.teambw.ne.common.blocks.utils.BlockVariant;
 import com.teambw.ne.common.util.Info;
 
 @SideOnly(Side.CLIENT)
 public class ModelVariant
 {
 
-	public void registerItemRenderer(Block block, IBlockVariant[] variants)
+	public void registerItemRenderer(Block block, Collection<BlockVariant> variants)
 	{
-		String[] names = new String[variants.length];
+		String[] names = new String[variants.size()];
 
-		for (int i = 0; i < variants.length; ++i)
+		Iterator<BlockVariant> iterator = variants.iterator();
+		for (int i = 0; iterator.hasNext(); i++)
 		{
-			IBlockVariant subtype = variants[i];
-			names[i] = (Info.ID + ":") + subtype.getName();
+			BlockVariant variant = iterator.next();
+			names[i] = (Info.ID + ":") + variant.getName();
 
-			this.registerItemRenderer(names[i], Item.getItemFromBlock(block), subtype.getMetadata());
+			this.registerItemRenderer(names[i], Item.getItemFromBlock(block), variant.getMeta());
 		}
 
 		ModelBakery.addVariantName(Item.getItemFromBlock(block), names);

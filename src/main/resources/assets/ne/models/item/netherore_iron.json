@@ -1,5 +1,5 @@
 {
-	"parent": "ne:block/blockNetherLapis",
+	"parent": "ne:block/netherore_iron",
     "display": {
         "thirdperson": {
             "rotation": [ 10, -45, 170 ],

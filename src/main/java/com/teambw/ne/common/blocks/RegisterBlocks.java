@@ -38,7 +38,7 @@ public class RegisterBlocks
 			ModelVariant models = NetherEnhancements.proxy.getModels();
 
 			models.registerItemRenderer(blockTest, 0);
-			models.registerItemRenderer(netherOres, BlockNetherOres.OreVariant.values());
+			models.registerItemRenderer(netherOres, BlockNetherOres.ORE_TYPE.getAllowedValues());
 		}
 	}
 }

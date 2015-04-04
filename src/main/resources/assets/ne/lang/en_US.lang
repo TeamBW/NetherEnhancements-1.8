@@ -1,9 +1,9 @@
 #Blocks
 tile.blockTest.name=Test Block
-tile.blockNetherCoal.name=Nether Coal Ore
-tile.blockNetherIron.name=Nether Iron Ore
-tile.blockNetherGold.name=Nether Gold Ore
-tile.blockNetherLapis.name=Nether Lapis Ore
+tile.netherOres.netherore_coal.name=Nether Coal Ore
+tile.netherOres.netherore_iron.name=Nether Iron Ore
+tile.netherOres.netherore_gold.name=Nether Gold Ore
+tile.netherOres.netherore_lapis.name=Nether Lapis Ore
 
 #Items
 item.itemTest.name=Test Items

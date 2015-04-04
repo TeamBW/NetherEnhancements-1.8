@@ -1,4 +1,4 @@
-package com.teambw.ne.common.blocks.iface;
+package com.teambw.ne.common.blocks.utils;
 
 import net.minecraft.item.ItemStack;
 

@@ -6,7 +6,6 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
-import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
@@ -17,58 +16,20 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import com.teambw.ne.common.blocks.iface.IBlockVariant;
-import com.teambw.ne.common.blocks.iface.IBlockWithVariants;
+import com.teambw.ne.common.blocks.utils.BlockVariant;
+import com.teambw.ne.common.blocks.utils.IBlockWithVariants;
+import com.teambw.ne.common.blocks.utils.PropertyVariant;
 import com.teambw.ne.common.init.ModTab;
 
 public class BlockNetherOres extends Block implements IBlockWithVariants
 {
-	public enum OreVariant implements IBlockVariant
-	{
-		COAL(0, "netherore_coal"),
-		GOLD(1, "netherore_gold"),
-		IRON(2, "netherore_iron"),
-		LAPIS(3, "netherore_lapis");
+	public static final BlockVariant
+			COAL = new BlockVariant(0, "netherore_coal"),
+			GOLD = new BlockVariant(1, "netherore_gold"),
+			IRON = new BlockVariant(2, "netherore_iron"),
+			LAPIS = new BlockVariant(3, "netherore_lapis");
 
-		private static final OreVariant[] metaLookup = new OreVariant[OreVariant.values().length];
-
-		static
-		{
-			for (OreVariant type : OreVariant.values())
-			{
-				metaLookup[type.getMetadata()] = type;
-			}
-		}
-
-		private int metadata;
-
-		private String name;
-
-		OreVariant(int metadata, String name)
-		{
-			this.metadata = metadata;
-			this.name = name;
-		}
-
-		@Override
-		public String getName()
-		{
-			return this.name;
-		}
-
-		@Override
-		public int getMetadata()
-		{
-			return this.metadata;
-		}
-
-		public static OreVariant getVariantFromMetadata(int meta)
-		{
-			return OreVariant.metaLookup[meta];
-		}
-	}
-
-	public static final PropertyEnum ORE_TYPE = PropertyEnum.create("variant", OreVariant.class);
+	public static final PropertyVariant ORE_TYPE = PropertyVariant.create("variant", COAL, GOLD, IRON, LAPIS);
 
 	public BlockNetherOres()
 	{
@@ -78,7 +39,7 @@ public class BlockNetherOres extends Block implements IBlockWithVariants
 		this.setHardness(2.5F);
 		this.setHarvestLevel("pickaxe", 3);
 
-		this.setDefaultState(this.getBlockState().getBaseState().withProperty(ORE_TYPE, OreVariant.COAL));
+		this.setDefaultState(this.getBlockState().getBaseState().withProperty(ORE_TYPE, COAL));
 		this.setCreativeTab(ModTab.MAIN);
 	}
 
@@ -87,16 +48,16 @@ public class BlockNetherOres extends Block implements IBlockWithVariants
 	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(Item itemIn, CreativeTabs tab, List list)
 	{
-		for (OreVariant type : OreVariant.values())
+		for (BlockVariant type : ORE_TYPE.getAllowedValues())
 		{
-			list.add(new ItemStack(itemIn, 1, type.getMetadata()));
+			list.add(new ItemStack(itemIn, 1, type.getMeta()));
 		}
 	}
 
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune)
 	{
-		switch (((OreVariant) state.getValue(ORE_TYPE)).getMetadata())
+		switch (((BlockVariant) state.getValue(ORE_TYPE)).getMeta())
 		{
 		case 0:
 			return Items.coal;
@@ -120,13 +81,13 @@ public class BlockNetherOres extends Block implements IBlockWithVariants
 	@Override
 	public IBlockState getStateFromMeta(int meta)
 	{
-		return this.getDefaultState().withProperty(ORE_TYPE, OreVariant.getVariantFromMetadata(meta));
+		return this.getDefaultState().withProperty(ORE_TYPE, ORE_TYPE.getVariantFromMeta(meta));
 	}
 
 	@Override
 	public int getMetaFromState(IBlockState state)
 	{
-		return ((OreVariant) state.getValue(ORE_TYPE)).getMetadata();
+		return ((BlockVariant) state.getValue(ORE_TYPE)).getMeta();
 	}
 
 	@Override
@@ -138,6 +99,6 @@ public class BlockNetherOres extends Block implements IBlockWithVariants
 	@Override
 	public String getVariantNameFromStack(ItemStack stack)
 	{
-		return OreVariant.getVariantFromMetadata(stack.getMetadata()).getName();
+		return ORE_TYPE.getVariantFromMeta(stack.getMetadata()).getName();
 	}
 }

@@ -1,6 +1,6 @@
 {
 	"parent": "block/cube_all",
 	"textures": {
-		"all": "ne:blocks/blockNetherLapis"
+		"all": "ne:blocks/netherore_coal"
 	}
 }

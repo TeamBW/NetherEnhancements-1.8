@@ -1,5 +1,5 @@
 {
-	"parent": "ne:block/blockNetherGold",
+	"parent": "ne:block/netherore_coal",
     "display": {
         "thirdperson": {
             "rotation": [ 10, -45, 170 ],

@@ -1,5 +1,8 @@
 {
 	"variants": {
-		"normal": { "model": "ne:blockNetherCoal" }
-	}
+        "variant=netherore_coal": { "model": "ne:netherore_coal" },
+        "variant=netherore_gold": { "model": "ne:netherore_gold" },
+        "variant=netherore_iron": { "model": "ne:netherore_iron" },
+        "variant=netherore_lapis": { "model": "ne:netherore_lapis" }
+    }
 }
