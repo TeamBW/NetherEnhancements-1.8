@@ -1,13 +1,13 @@
 package com.teambw.ne.common.util.helpers;
 
-import com.teambw.ne.common.util.Reference;
-import cpw.mods.fml.common.FMLLog;
+import com.teambw.ne.common.util.Info;
+import net.minecraftforge.fml.common.FMLLog;
 import org.apache.logging.log4j.Level;
 
 public class LogHelper {
 
     public static void log(Level logLevel, Object object) {
-        FMLLog.log(Reference.NAME, logLevel, String.valueOf(object));
+        FMLLog.log(Info.NAME, logLevel, String.valueOf(object));
     }
 
     public static void all(Object object) {

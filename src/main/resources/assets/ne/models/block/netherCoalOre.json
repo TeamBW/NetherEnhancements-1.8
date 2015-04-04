@@ -1,0 +1,6 @@
+{
+	"parent": "ne:block/NE_cube_all",
+	"textures": {
+		"all": "ne:blocks/netherCoalOre"
+	}
+}

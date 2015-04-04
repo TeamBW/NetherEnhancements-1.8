@@ -1,7 +1,7 @@
 package com.teambw.ne.common.init;
 
 import com.teambw.ne.common.items.test.ItemTest;
-import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class RegisterItems {
 

@@ -1,23 +1,22 @@
 package com.teambw.ne.common;
 
-import com.teambw.ne.common.init.RegisterBlocks;
-import com.teambw.ne.common.init.RegisterItems;
+import com.teambw.ne.common.init.*;
 import com.teambw.ne.common.proxy.CommonProxy;
-import com.teambw.ne.common.util.Reference;
+import com.teambw.ne.common.util.Info;
 import com.teambw.ne.common.util.helpers.LogHelper;
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = Reference.ID, name = Reference.NAME, version = Reference.VERSION)
+@Mod(modid = Info.ID, name = Info.NAME, version = Info.VERSION)
 public class NetherEnhancements {
 
-    @Mod.Instance(value = Reference.ID)
+    @Mod.Instance(value = Info.ID)
     public static NetherEnhancements instance;
 
-    @SidedProxy(clientSide = Reference.CLIENT_PROXY, serverSide = Reference.SERVER_PROXY)
+    @SidedProxy(clientSide = Info.CLIENT_PROXY, serverSide = Info.SERVER_PROXY)
     public static CommonProxy proxy;
 
     @Mod.EventHandler
@@ -25,11 +24,15 @@ public class NetherEnhancements {
 
         RegisterBlocks.init();
         RegisterItems.init();
+        RegisterOres.init();
 
         LogHelper.info("Pre Initialization Complete");
     }
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
+
+        InventoryRender.init();
+        RegisterRecipes.init();
 
         LogHelper.info("Initialization Complete");
     }

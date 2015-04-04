@@ -1,5 +1,6 @@
 /build
 /eclipse
+/out
 *.ipr
 *.iml
 *.iws
