@@ -2,20 +2,24 @@ package com.teambw.ne.common.init;
 
 import net.minecraftforge.oredict.OreDictionary;
 
-public class RegisterOres {
-    public static void init() {
-        /**
-         * Blocks
-         */
+import com.teambw.ne.common.NetherEnhancements;
 
-        //Test
-        OreDictionary.registerOre("testBlock", RegisterBlocks.blockTest);
+public class RegisterOres
+{
+	public static void init()
+	{
+		/**
+		 * Blocks
+		 */
 
-        /**
-         * Items
-         */
+		//Test
+		OreDictionary.registerOre("testBlock", NetherEnhancements.getBlocks().blockTest);
 
-        //Test
-        OreDictionary.registerOre("testItem", RegisterItems.itemTest);
-    }
+		/**
+		 * Items
+		 */
+
+		//Test
+		OreDictionary.registerOre("testItem", NetherEnhancements.getItems().itemTest);
+	}
 }

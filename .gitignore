@@ -1,6 +1,35 @@
-/build
-/eclipse
-/out
-*.ipr
+# Compiled Java
+*.class
+
+# Eclipse
+.classpath
+.project
+.settings
+eclipse
+run
+bin
+
+#IDEA files from Gradle
+/.idea/
 *.iml
+*.ipr
 *.iws
+
+# Gradle
+/.gradle/
+/build/
+/bin/
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Mac
+*/.DS_Store
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+Icon?
+
+# Folder config file
+Desktop.ini

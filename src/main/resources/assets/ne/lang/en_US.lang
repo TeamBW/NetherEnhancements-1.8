@@ -1,9 +1,9 @@
 #Blocks
-tile.ne:testBlock.name=Test Block
-tile.ne:netherCoalOre.name=Nether Coal Ore
+tile.blockTest.name=Test Block
+tile.blockNetherCoal.name=Nether Coal Ore
 
 #Items
-item.ne:itemTest.name=Test Items
+item.itemTest.name=Test Items
 
 #Item Groups
 itemGroup.ne=Nether Enhancements

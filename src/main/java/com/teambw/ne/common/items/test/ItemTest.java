@@ -1,10 +1,14 @@
 package com.teambw.ne.common.items.test;
 
-import com.teambw.ne.common.items.ModItem;
+import net.minecraft.item.Item;
 
-public class ItemTest extends ModItem {
-    public ItemTest() {
-        super();
-        this.setUnlocalizedName("itemTest");
-    }
+import com.teambw.ne.common.init.ModTab;
+
+public class ItemTest extends Item
+{
+	public ItemTest()
+	{
+		super();
+		this.setCreativeTab(ModTab.MAIN);
+	}
 }
