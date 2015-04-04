@@ -1,11 +1,15 @@
 package com.teambw.ne.common.blocks.test;
 
-import com.teambw.ne.common.blocks.ModBlock;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
-public class BlockTest extends ModBlock {
-    public BlockTest(Material material) {
-        super(material);
-        this.setUnlocalizedName("testBlock");
-    }
+import com.teambw.ne.common.init.ModTab;
+
+public class BlockTest extends Block
+{
+	public BlockTest(Material material)
+	{
+		super(material);
+		this.setCreativeTab(ModTab.MAIN);
+	}
 }

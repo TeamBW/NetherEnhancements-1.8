@@ -1,5 +1,5 @@
 {
-    "parent": "block/cube_column",
+	"parent": "ne:block/blockNetherCoal",
     "display": {
         "thirdperson": {
             "rotation": [ 10, -45, 170 ],

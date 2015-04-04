@@ -1,6 +1,0 @@
-{
-	"parent": "ne:item/NE_item",
-	"textures": {
-		"layer0": "ne:items/testItem"
-	}
-}

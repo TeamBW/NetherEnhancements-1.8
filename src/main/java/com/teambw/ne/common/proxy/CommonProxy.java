@@ -1,4 +1,11 @@
 package com.teambw.ne.common.proxy;
 
-public abstract class CommonProxy implements IProxy {
+import com.teambw.ne.client.renderer.ModelVariant;
+
+public abstract class CommonProxy implements IProxy
+{
+	public ModelVariant getModels()
+	{
+		return null;
+	}
 }
