@@ -4,10 +4,8 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import com.teambw.ne.common.NetherEnhancements;
 
-public class RegisterOres
-{
-	public static void init()
-	{
+public class RegisterOres {
+	public static void init() {
 		/**
 		 * Blocks
 		 */

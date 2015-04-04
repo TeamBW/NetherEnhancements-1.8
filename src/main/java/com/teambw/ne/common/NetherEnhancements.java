@@ -15,8 +15,7 @@ import com.teambw.ne.common.util.Info;
 import com.teambw.ne.common.util.helpers.LogHelper;
 
 @Mod(modid = Info.ID, name = Info.NAME, version = Info.VERSION)
-public class NetherEnhancements
-{
+public class NetherEnhancements {
 
 	@Mod.Instance(value = Info.ID)
 	public static NetherEnhancements instance;
@@ -29,8 +28,7 @@ public class NetherEnhancements
 	private RegisterItems items = new RegisterItems();
 
 	@Mod.EventHandler
-	public void preInit(FMLPreInitializationEvent event)
-	{
+	public void preInit(FMLPreInitializationEvent event) {
 		this.blocks.preInit();
 		this.items.preInit();
 		RegisterOres.init();
@@ -39,8 +37,7 @@ public class NetherEnhancements
 	}
 
 	@Mod.EventHandler
-	public void init(FMLInitializationEvent event)
-	{
+	public void init(FMLInitializationEvent event) {
 		this.blocks.init();
 		this.items.init();
 		RegisterRecipes.init();

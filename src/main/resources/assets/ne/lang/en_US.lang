@@ -1,6 +1,8 @@
 #Blocks
 tile.blockTest.name=Test Block
 tile.blockNetherCoal.name=Nether Coal Ore
+tile.blockNetherIron.name=Nether Iron Ore
+tile.blockNetherGold.name=Nether Gold Ore
 
 #Items
 item.itemTest.name=Test Items

@@ -18,18 +18,15 @@ public class RegisterItems
 		this.itemTest = this.registerItem("itemTest", new ItemTest());
 	}
 
-	private <T extends Item> T registerItem(String name, T item)
-	{
+	private <T extends Item> T registerItem(String name, T item) {
 		item.setUnlocalizedName(name);
 		GameRegistry.registerItem(item, name);
 
 		return item;
 	}
 
-	public void init()
-	{
-		if (NetherEnhancements.proxy.getModels() != null)
-		{
+	public void init() {
+		if (NetherEnhancements.proxy.getModels() != null) {
 			ModelVariant models = NetherEnhancements.proxy.getModels();
 
 			models.registerItemRenderer(this.itemTest, 0);

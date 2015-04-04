@@ -1,5 +1,5 @@
 {
-	"parent": "ne:block/NAME",
+	"parent": "ne:block/blockNetherLapis",
     "display": {
         "thirdperson": {
             "rotation": [ 10, -45, 170 ],

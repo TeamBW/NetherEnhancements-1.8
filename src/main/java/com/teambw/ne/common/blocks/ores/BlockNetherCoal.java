@@ -9,10 +9,8 @@ import net.minecraft.item.Item;
 
 import com.teambw.ne.common.init.ModTab;
 
-public class BlockNetherCoal extends Block
-{
-	public BlockNetherCoal(Material material)
-	{
+public class BlockNetherCoal extends Block {
+	public BlockNetherCoal(Material material) {
 		super(material);
 		this.setStepSound(soundTypePiston);
 		this.setResistance(2.0F);
