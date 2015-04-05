@@ -1,7 +1,8 @@
 package com.teambw.ne.common.items;
 
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemSword;
+import com.teambw.ne.common.init.ToolMaterials;
+import com.teambw.ne.common.items.tools.netherbrick.*;
+import net.minecraft.item.*;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import com.teambw.ne.client.renderer.ModelVariant;
@@ -14,11 +15,24 @@ public class RegisterItems
 
     public ItemSword toolNetherBrickSword;
 
+    public ItemPickaxe toolNetherBrickPickaxe;
+
+    public ItemSpade toolNetherBrickShovel;
+
+    public ItemAxe toolNetherBrickAxe;
+
+    public ItemHoe toolNetherBrickHoe;
+
 	public void preInit()
 	{
 		this.itemTest = this.registerItem("itemTest", new ItemTest());
 
         //Tools
+        this.toolNetherBrickSword = this.registerItem("toolNetherBrickSword", new ToolNetherBrickSword(ToolMaterials.NETHER_BRICK));
+        this.toolNetherBrickPickaxe = this.registerItem("toolNetherBrickPickaxe", new ToolNetherBrickPickaxe(ToolMaterials.NETHER_BRICK));
+        this.toolNetherBrickShovel = this.registerItem("toolNetherBrickShovel", new ToolNetherBrickShovel(ToolMaterials.NETHER_BRICK));
+        this.toolNetherBrickAxe = this.registerItem("toolNetherBrickAxe", new ToolNetherBrickAxe(ToolMaterials.NETHER_BRICK));
+        this.toolNetherBrickHoe = this.registerItem("toolNetherBrickHoe", new ToolNetherBrickHoe(ToolMaterials.NETHER_BRICK));
 	}
 
 	private <T extends Item> T registerItem(String name, T item) {
@@ -33,6 +47,13 @@ public class RegisterItems
 			ModelVariant models = NetherEnhancements.proxy.getModels();
 
 			models.registerItemRenderer(this.itemTest, 0);
+
+            //Tools
+            models.registerItemRenderer(this.toolNetherBrickSword, 0);
+            models.registerItemRenderer(this.toolNetherBrickPickaxe, 0);
+            models.registerItemRenderer(this.toolNetherBrickShovel, 0);
+            models.registerItemRenderer(this.toolNetherBrickAxe, 0);
+            models.registerItemRenderer(this.toolNetherBrickHoe, 0);
 		}
 	}
 }

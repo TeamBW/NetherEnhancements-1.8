@@ -9,6 +9,13 @@ tile.netherOres.netherore_redstone.name=Nether Redstone Ore
 tile.netherOres.netherore_emerald.name=Nether Emerald Ore
 tile.netherOres.netherore_omniite.name=Omniite Ore
 
+#Tools
+item.toolNetherBrickSword.name=Nether Brick Sword
+item.toolNetherBrickPickaxe.name=Nether Brick Pickaxe
+item.toolNetherBrickShovel.name=Nether Brick Shovel
+item.toolNetherBrickAxe.name=Nether Brick Axe
+item.toolNetherBrickHoe.name=Nether Brick Hoe
+
 #Items
 item.itemTest.name=Test Items
 
