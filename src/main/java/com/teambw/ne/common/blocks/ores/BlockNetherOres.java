@@ -1,8 +1,8 @@
 package com.teambw.ne.common.blocks.ores;
 
-import com.teambw.ne.common.blocks.utils.BlockVariant;
-import com.teambw.ne.common.blocks.utils.IBlockWithVariants;
-import com.teambw.ne.common.blocks.utils.PropertyVariant;
+import com.teambw.ne.api.block.BlockVariant;
+import com.teambw.ne.api.block.IBlockWithVariants;
+import com.teambw.ne.api.block.PropertyVariant;
 import com.teambw.ne.common.init.ModTab;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -26,9 +26,14 @@ public class BlockNetherOres extends Block implements IBlockWithVariants
             COAL = new BlockVariant(0, "netherore_coal"),
             GOLD = new BlockVariant(1, "netherore_gold"),
             IRON = new BlockVariant(2, "netherore_iron"),
-            LAPIS = new BlockVariant(3, "netherore_lapis");
+            LAPIS = new BlockVariant(3, "netherore_lapis"),
+            DIAMOND = new BlockVariant(4, "netherore_diamond"),
+            EMERALD = new BlockVariant(5, "netherore_emerald"),
+            REDSTONE = new BlockVariant(6, "netherore_redstone"),
+            OMNIITE = new BlockVariant(7, "netherore_omniite");
 
-    public static final PropertyVariant ORE_TYPE = PropertyVariant.create("variant", COAL, GOLD, IRON, LAPIS);
+
+    public static final PropertyVariant ORE_TYPE = PropertyVariant.create("variant", COAL, GOLD, IRON, LAPIS, DIAMOND, EMERALD, REDSTONE, OMNIITE);
 
     public BlockNetherOres()
     {
@@ -59,13 +64,21 @@ public class BlockNetherOres extends Block implements IBlockWithVariants
         switch (((BlockVariant) state.getValue(ORE_TYPE)).getMeta())
         {
             case 0:
-                return Items.coal;
+                return Item.getItemFromBlock(Blocks.coal_ore);
             case 1:
-                return Items.gold_ingot;
+                return Item.getItemFromBlock(Blocks.gold_ore);
             case 2:
-                return Items.iron_ingot;
+                return Item.getItemFromBlock(Blocks.iron_ore);
             case 3:
                 return Item.getItemFromBlock(Blocks.lapis_ore);
+            case 4:
+                return Item.getItemFromBlock(Blocks.diamond_ore);
+            case 5:
+                return Item.getItemFromBlock(Blocks.emerald_ore);
+            case 6:
+                return Item.getItemFromBlock(Blocks.redstone_ore);
+            case 7:
+                return Item.getItemFromBlock(Blocks.bedrock);
         }
 
         return Items.coal;
@@ -74,7 +87,7 @@ public class BlockNetherOres extends Block implements IBlockWithVariants
     @Override
     public int quantityDropped(Random random)
     {
-        return 1 + random.nextInt(2);
+        return 2 + random.nextInt(3);
     }
 
     @Override

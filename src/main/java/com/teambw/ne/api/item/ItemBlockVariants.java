@@ -1,10 +1,10 @@
-package com.teambw.ne.common.items.itemblocks;
+package com.teambw.ne.api.item;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
-import com.teambw.ne.common.blocks.utils.IBlockWithVariants;
+import com.teambw.ne.api.block.IBlockWithVariants;
 
 public class ItemBlockVariants extends ItemBlock
 {

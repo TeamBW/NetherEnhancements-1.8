@@ -1,7 +1,7 @@
 package com.teambw.ne.common.blocks;
 
 import com.teambw.ne.common.blocks.ores.*;
-import com.teambw.ne.common.items.itemblocks.ItemBlockVariants;
+import com.teambw.ne.api.item.ItemBlockVariants;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemBlock;

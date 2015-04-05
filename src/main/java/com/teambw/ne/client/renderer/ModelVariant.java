@@ -1,6 +1,6 @@
 package com.teambw.ne.client.renderer;
 
-import com.teambw.ne.common.blocks.utils.BlockVariant;
+import com.teambw.ne.api.block.BlockVariant;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelBakery;

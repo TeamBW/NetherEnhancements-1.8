@@ -1,0 +1,12 @@
+{
+	"variants": {
+        "variant=netherore_coal": { "model": "ne:netherore_coal" },
+        "variant=netherore_gold": { "model": "ne:netherore_gold" },
+        "variant=netherore_iron": { "model": "ne:netherore_iron" },
+        "variant=netherore_lapis": { "model": "ne:netherore_lapis" },
+        "variant=netherore_diamond": { "model": "ne:netherore_diamond" },
+        "variant=netherore_emerald": { "model": "ne:netherore_emerald" },
+        "variant=netherore_redstone": { "model": "ne:netherore_redstone" },
+        "variant=netherore_omniite": { "model": "ne:netherore_omniite" }
+    }
+}

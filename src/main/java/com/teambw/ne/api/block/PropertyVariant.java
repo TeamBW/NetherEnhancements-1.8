@@ -1,4 +1,4 @@
-package com.teambw.ne.common.blocks.utils;
+package com.teambw.ne.api.block;
 
 import java.util.Collection;
 import java.util.HashMap;
