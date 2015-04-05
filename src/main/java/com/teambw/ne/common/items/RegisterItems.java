@@ -1,6 +1,8 @@
 package com.teambw.ne.common.items;
 
+import com.teambw.ne.common.init.ArmorMaterials;
 import com.teambw.ne.common.init.ToolMaterials;
+import com.teambw.ne.common.items.armor.netherbrick.ArmorNetherBrick;
 import com.teambw.ne.common.items.tools.netherbrick.*;
 import net.minecraft.item.*;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -23,6 +25,8 @@ public class RegisterItems
 
     public ItemHoe toolNetherBrickHoe;
 
+    public static ItemArmor armorNetherBrick;
+
 	public void preInit()
 	{
 		this.itemTest = this.registerItem("itemTest", new ItemTest());
@@ -33,6 +37,9 @@ public class RegisterItems
         this.toolNetherBrickShovel = this.registerItem("toolNetherBrickShovel", new ToolNetherBrickShovel(ToolMaterials.NETHER_BRICK));
         this.toolNetherBrickAxe = this.registerItem("toolNetherBrickAxe", new ToolNetherBrickAxe(ToolMaterials.NETHER_BRICK));
         this.toolNetherBrickHoe = this.registerItem("toolNetherBrickHoe", new ToolNetherBrickHoe(ToolMaterials.NETHER_BRICK));
+
+        //Armor
+        //this.armorNetherBrick = this.registerItem("armorNetherBrick", new ArmorNetherBrick(ArmorMaterials.NETHER_BRICK, 0, 0));
 	}
 
 	private <T extends Item> T registerItem(String name, T item) {
